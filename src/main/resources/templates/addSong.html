@@ -6,7 +6,16 @@
 </div>
 
 <div>
-    <form method="POST" enctype="multipart/form-data" action="/">
+    <form th:object="${addMusicForm}" method="POST" enctype="multipart/form-data" action="/">
+        <div>
+            <label> MusicName :<input type="text" th:field="*{songName}" class="form-control"/></label>
+        </div>
+        <div>
+            <label> ArtistName<input type="text" th:field="*{artistName}" class="form-control"/></label>
+        </div>
+        <div>
+            <label> Date <input type="text" th:field="*{date}" class="form-control"/></label>
+        </div>
         <table>
             <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
             <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
@@ -21,6 +30,9 @@
         </li>
     </ul>
 </div>
+
+<input type="button" value="Home" class="homebutton" id="btnHome"
+       onClick="document.location.href='/'" />
 
 </body>
 </html>
