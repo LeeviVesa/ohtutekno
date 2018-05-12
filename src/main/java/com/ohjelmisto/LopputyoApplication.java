@@ -20,10 +20,10 @@ public class LopputyoApplication {
 	}
 
 	@Bean
-	public CommandLineRunner init(MusicRepository repository) {
+	public CommandLineRunner demo(MusicRepository repository) {
 		return (args) -> {
-			repository.save(new Music("Be somebody", "Leevi Vesa", "13.1.2017", "../music/VSA - Be somebody.mp3"));
-			repository.save(new Music("Momentum", "Leevi Vesa", "30.8.2017","../music/VSA - Momentum.mp3"));
+			//repository.save(new Music("Be somebody", "Leevi Vesa", "13.1.2017", "../music/VSA - Be somebody.mp3"));
+			//repository.save(new Music("Momentum", "Leevi Vesa", "30.8.2017","../music/VSA - Momentum.mp3"));
 		};
 	}
 	@Bean

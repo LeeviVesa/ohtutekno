@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 class App extends React.Component {
 
@@ -33,9 +32,9 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <img src={require('../img/vsa pieni.png')} />
-                <text style={{fontSize: 25}}>SONGLIST</text>
+            <div style={{marginTop: 100}}>
+                <img style={{height:100,  alignItems:"center"}} src={require('../img/vsa pieni.png')} />
+                <text style={{marginTop: 200, fontSize: 60, color:"#c8c8c8"}}>SONGLIST</text>
                 <SongsTable song={this.state.songs}/>
             </div>
         );
@@ -81,11 +80,11 @@ class SongsTable extends React.Component {
             mode: 'checkbox'
         };
         const cellEditProp = {
-            mode: 'click',
+            mode: 'dbclick',
             blurToSave: true
         };
         return (
-            <div>
+            <div style={{backgroundColor:"#b6b6b6"}}>
             <BootstrapTable data={songprop} striped hover
                             options={ options }
                             deleteRow={ true }
@@ -95,7 +94,7 @@ class SongsTable extends React.Component {
                 <TableHeaderColumn  width="150" isKey dataField='id'>Song ID</TableHeaderColumn>
                 <TableHeaderColumn width="150" dataField='songName'>Song Name</TableHeaderColumn>
                 <TableHeaderColumn width="150" dataField='artistName'>Artist Name</TableHeaderColumn>
-                <TableHeaderColumn width="150" dataField='date'>Date</TableHeaderColumn>
+                <TableHeaderColumn width="100" dataField='date'>Date</TableHeaderColumn>
                 <TableHeaderColumn dataFormat={ musicFormatter }>Player</TableHeaderColumn>
             </BootstrapTable>
             </div>

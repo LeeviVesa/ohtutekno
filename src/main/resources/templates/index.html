@@ -1,18 +1,31 @@
 <!DOCTYPE html>
 <html>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <head>
+    <style>
+        body {
+            background:url('./img/background.jpg');
+            -webkit-background-size: cover;
+            background-size: cover;
+            height:100%;
+        }
+
+    </style>
     <title>Music Player</title>
 </head>
-
 <body>
+
 <div class='container'>
     <div id='root'></div>
 </div>
-<input type="button" value="Upload" class="homebutton" id="btnHome"
-       onClick="document.location.href='./upload'" />
+<div style="padding-left: 72%">
+    <input type="button" value="Upload" class="btn btn-primary" id="btnHome" style=""
+           onClick="document.location.href='./upload'" />
+    <input type="button" value="Player" class="btn btn-primary" id="btnPlayer" style=""
+           onClick="document.location.href='./player'" />
+</div>
+
 <script src="../static/bundle.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <!--<script src="https:/*/cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react-dom.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.js"> </script>

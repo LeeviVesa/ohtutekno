@@ -1,38 +1,49 @@
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<head>
+    <style>
+        body {
+            background:url('./img/background.jpg')no-repeat;
+            -webkit-background-size: cover;
+            background-size: cover;
+            height:100%;
+        }
+    </style>
+</head>
 <body>
 
-<div th:if="${message}">
-    <h2 th:text="${message}"/>
+<div style="color: whitesmoke; text-align: center;" th:if="${message}">
+    <h2 style="color: whitesmoke" th:text="${message}"/>
 </div>
-
+<div style="text-align: center; position: relative; margin-top: 100px">
 <div>
     <form th:object="${addMusicForm}" method="POST" enctype="multipart/form-data" action="/">
         <div>
-            <label> MusicName :<input type="text" th:field="*{songName}" class="form-control"/></label>
+            <label style="color: whitesmoke"> MusicName<input type="text" th:field="*{songName}" class="form-control"/></label>
         </div>
         <div>
-            <label> ArtistName<input type="text" th:field="*{artistName}" class="form-control"/></label>
+            <label style="color: whitesmoke"> ArtistName<input type="text" th:field="*{artistName}" class="form-control"/></label>
         </div>
         <div>
-            <label> Date <input type="text" th:field="*{date}" class="form-control"/></label>
+            <label style="color: whitesmoke"> Date <input type="text" th:field="*{date}" class="form-control"/></label>
         </div>
-        <table>
-            <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
-            <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+        <table align="center" style="margin-top: 20px">
+            <tr  align="center" class="btn btn-primary" style="color: whitesmoke; margin-top: 5px"><td>File to upload:</td><td><input  type="file" name="file" /></td></tr>
         </table>
+        <input class="btn btn-success" type="submit" value="Upload" style="margin-top: 20px" />
     </form>
 </div>
 
 <div>
-    <ul>
+    <ul style="color: #aee9ff; font-size: large">
         <li th:each="file : ${files}">
             <a th:href="${file}" th:text="${file}" />
         </li>
     </ul>
 </div>
 
-<input type="button" value="Home" class="homebutton" id="btnHome"
+<input type="button" value="Home" class="btn btn-primary" id="btnHome"
        onClick="document.location.href='/'" />
-
+</div>
 </body>
 </html>

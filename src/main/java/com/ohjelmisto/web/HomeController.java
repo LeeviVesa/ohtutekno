@@ -19,6 +19,11 @@ public class HomeController {
     @Autowired
     private MusicRepository repository;
 
+    @RequestMapping(value = "/player")
+    public String player() {
+        return "Player";
+    }
+
     @RequestMapping(value = "/add")
     public String addSong() {
         return "addSong";
@@ -39,6 +44,17 @@ public class HomeController {
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteMusic(@PathVariable("id") Long id, Model model) {
         repository.delete(id);
+        return "redirect:../";
+    }
+    @RequestMapping(value = "/update/{id}&{songName}&{artistName}&{date}", method = RequestMethod.GET)
+    public String updateMusic(@PathVariable("id") Long id,@PathVariable("songName") String songName
+            ,@PathVariable("artistName") String artistName,@PathVariable("date")  String date, Model model) {
+        Music newMusic = new Music();
+        newMusic.setId(id);
+        newMusic.setSongName(songName);
+        newMusic.setArtistName(artistName);
+        newMusic.setDate(date);
+        repository.save(newMusic);
         return "redirect:../";
     }
 

@@ -22,11 +22,18 @@
     "url-loader": "^1.0.1"
   },
   "dependencies": {
+    "acorn": "^5.5.3",
+    "font-awesome-webpack": "0.0.5-beta.2",
+    "font-loader": "^0.1.2",
     "jquery": "^3.3.1",
     "react": "^16.3.2",
     "react-bootstrap-table": "^4.3.1",
-    "react-cl-audio-player": "^2.1.1",
     "react-dom": "^16.3.2",
+    "react-responsive-music-player": "^0.2.4",
+    "react-s-alert": "^1.4.1",
+    "schema-utils": "^0.4.5",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "uri-js": "^4.2.1",
     "webpack": "^4.6.0",
     "webpack-cli": "^2.0.15"
   }

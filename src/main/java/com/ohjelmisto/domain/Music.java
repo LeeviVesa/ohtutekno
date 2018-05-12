@@ -1,20 +1,22 @@
 package com.ohjelmisto.domain;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "MusicTable")
 public class Music {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
 
+    @Column(name = "songName")
     private String songName;
+    @Column(name = "artistName")
     private String artistName;
+    @Column(name = "date")
     private String date;
+    @Column(name = "path")
     private String path;
 
     public Music() {
