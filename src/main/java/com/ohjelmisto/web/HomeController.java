@@ -19,6 +19,11 @@ public class HomeController {
     @Autowired
     private MusicRepository repository;
 
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
     @RequestMapping(value = "/player")
     public String player() {
         return "Player";

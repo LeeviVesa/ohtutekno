@@ -40,7 +40,7 @@ class App extends React.Component {
         );
     }
     loadSong() {
-        fetch('http://localhost:8080/list')
+        fetch('http://localhost:8080/list', {credentials: 'same-origin'})
             .then((response) => response.json())
             .then((responseJson) => {
                 let placeholdersonglist = [];

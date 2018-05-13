@@ -1,5 +1,6 @@
 package com.ohjelmisto;
 
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,6 +11,10 @@ import com.ohjelmisto.domain.Music;
 import com.ohjelmisto.domain.MusicRepository;
 import com.ohjelmisto.storage.StorageService;
 import com.ohjelmisto.storage.StorageProperties;
+import com.ohjelmisto.domain.UserRepository;
+import com.ohjelmisto.domain.User;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 @EnableConfigurationProperties(StorageProperties.class)
@@ -22,8 +27,6 @@ public class LopputyoApplication {
 	@Bean
 	public CommandLineRunner demo(MusicRepository repository) {
 		return (args) -> {
-			//repository.save(new Music("Be somebody", "Leevi Vesa", "13.1.2017", "../music/VSA - Be somebody.mp3"));
-			//repository.save(new Music("Momentum", "Leevi Vesa", "30.8.2017","../music/VSA - Momentum.mp3"));
 		};
 	}
 	@Bean
@@ -32,4 +35,5 @@ public class LopputyoApplication {
 			storageService.init();
 		};
 	}
+
 }

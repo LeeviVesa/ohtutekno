@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <head>
     <style>
         body {
@@ -15,12 +15,23 @@
 </head>
 
 <body>
-
+<div>
+</div>
 <div class='container'>
     <div id='root'></div>
 </div>
-<div style="padding-left: 76%">
+<div style="padding-left: 21%">
+    <details>
+        <summary class="btn btn-primary" >DOWNLOADS</summary>
+        <ul style="color: #4a52e9; font-size: large">
+            <li th:each="file : ${files}">
+                <a style="color: #d2f0ff;" th:href="${file}" th:text="${file}" />
+            </li>
+        </ul>
+    </details>
+
 </div>
+
 <script src="../static/bundle2.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <!--<script src="https:/*/cdnjs.cloudflare.com/ajax/libs/react/15.6.1/react.min.js"></script>
@@ -32,5 +43,6 @@
 <script type='text/babel' src="../static/App.js">
 </script>
 -->
+
 </body>
 </html>

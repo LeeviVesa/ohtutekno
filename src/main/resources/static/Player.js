@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import MusicPlayer from 'react-responsive-music-player'
 class Player extends React.Component {
     componentDidMount(){
-        fetch('http://localhost:8080/list')
+        fetch('http://localhost:8080/list', {credentials: 'same-origin'})
             .then((response) => response.json())
             .then((responseJson) => {
                 let placeholdersonglist = [];
@@ -51,15 +51,15 @@ class Player extends React.Component {
     }
 
     render() {
-
+        let image = '../img/background.jpg';
         return (
             <div>
                 <img style={{height:100,  alignItems:"center"}} src={require('../img/vsa pieni.png')} />
-                <text style={{marginTop: 200, fontSize: 60, color:"#c8c8c8"}}>SONGS</text>
-                <div style={{width: 900}}>
-            <div style={{marginTop: 150, border: '5px solid grey', borderRightColor: 'grey',}} >
+                <text style={{marginTop: 100, fontSize: 60, color:"#c8c8c8"}}>SONGS</text>
+                <div style={{}}>
+            <div style={{marginTop: 150, border: '2px solid black'}} >
                 <MusicPlayer btnColor = "#0080a0" progressColor ="#0080a0"
-                             style={{backgroundColor: "#ebe9ef", margintop: 150, fontSize: 20}} playlist={this.state.playlist} />
+                             style={{ flex: 1, backgroundImage: 'url('+image+')', margintop: 100, fontSize: 20}} playlist={this.state.playlist} />
             </div>
             </div>
             </div>
